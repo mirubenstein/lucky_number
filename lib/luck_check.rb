@@ -6,12 +6,6 @@ def luck_check(number)
   left_sum_sum = left_sum.to_s.split('').map {|i| i.to_i}
   right_sum_sum = right_sum.to_s.split('').map {|i| i.to_i}
 
-  if left_sum == right_sum
-    return "Lucky Number"
-  elsif left_sum == right_sum_sum.reduce(:+) || right_sum == left_sum_sum.reduce(:+)
-    return "Half Lucky Number"
-  else
-    return "No Lucky Number"
-  end
+  left_sum == right_sum ? "Lucky Number" : left_sum == right_sum_sum.reduce(:+) || right_sum == left_sum_sum.reduce(:+) ?  "Half Lucky Number" : "No Lucky Number"
 
 end
